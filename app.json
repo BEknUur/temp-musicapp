@@ -1,0 +1,50 @@
+{
+    "name": "Music Drox",
+    "description": "Welcome to the installation of Music Drox source: https://t.me/DroxTeAm.",
+    "logo": "https://telegra.ph/file/40c0ab31719a780e37b5c.jpg",
+    "keywords": [
+        "Telegram",
+        "MusicPlayer",
+        "VideoPlayer"
+    ],
+    "repository": "https://github.com/Rasul-Muntazar/MUSIC",
+    "env": {
+        "SESSION": {
+            "description": "Enter the Pyro session code here",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Enter the API ID here",
+            "required": true
+        },
+        "HNDLR": {
+            "description": "Enter the command prefix you want (e.g., . - ! - / - $)",
+            "required": false,
+            "value": "$"
+        },
+        "API_HASH": {
+            "description": "Enter the API hash here",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "Enter your account ID here",
+            "required": true
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "stack": "container"
+}
