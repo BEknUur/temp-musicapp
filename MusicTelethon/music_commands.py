@@ -29,16 +29,12 @@ async def _human_time_duration(seconds):
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["restart"], prefixes=f"{HNDLR}"))
 async def restart(client, m: Message):
     await m.delete()
-    loli = await m.reply("1")
-    await loli.edit("2")
-    await loli.edit("3")
-    await loli.edit("4")
-    await loli.edit("5")
-    await loli.edit("6")
-    await loli.edit("7")
-    await loli.edit("8")
-    await loli.edit("9")
-    await loli.edit("**✅ Music Drox has been restarted successfully**")
+    loli = await m.reply("Restarting...")
+    await loli.edit("3️⃣")
+    await loli.edit("2️⃣")
+    await loli.edit("1️⃣")
+    await loli.edit("♻️ **Bot is restarting now...**")
+    await loli.edit("✅ **Music Drox has been restarted successfully!**")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
 
@@ -48,27 +44,34 @@ async def help(client, m: Message):
     HELP = f"""
 <b>‹ Hello {m.from_user.mention}!
 
-𝘔𝘶𝘴𝘪𝘤 𝘛𝘦𝘭𝘦𝘵𝘩𝘰𝘯 𝘖𝘳𝘥𝘦𝘳𝘴
+🎵 **Music Teelethon Bot Commands**
 ——————×—————
 
-‹ To play an audio in call ⇦ [ `{HNDLR}play + song name` ]
-‹ To play a video in call ⇦ [ `{HNDLR}play_video + song name` ]
+🎶 **Playback Commands:**
+- To play an audio in call ⇦ [ `{HNDLR}play + song name` ]
+- To play a video in call ⇦ [ `{HNDLR}play_video + song name` ]
+
+⏯ **Playback Controls:**
+- Pause the song/video ⇦ [ `{HNDLR}pause` ] 
+- Resume the song ⇦ [ `{HNDLR}resume` ]
+- Stop playback ⇦ [ `{HNDLR}stop` ] 
+
+📥 **Download Commands:**
+- Download an audio ⇦ [ `{HNDLR}download + song name or link` ]
+- Download a video ⇦ [ `{HNDLR}download_video + song name or link` ]
+
+🆕 **New Updates (Today):**
+- Added smoother restart function!
+- Minor UI improvements in command responses.
+
+♻ **System Commands:**
+- Restart the bot ⇦ [ `{HNDLR}restart` ]
+
 ———————×———————
 
-‹ To pause the song or video ⇦ [ `{HNDLR}pause` ] 
-‹ To resume the song ⇦ [ `{HNDLR}resume` ]
-‹ To stop the song ⇦ [ `{HNDLR}stop` ] 
-———————×———————
-
-‹ To download an audio ⇦ [ `{HNDLR}download + song name or link` ]
-‹ To download a video ⇦ [ `{HNDLR}download_video + song name or link` ]
-———————×———————
-
-‹ To restart the bot ⇦ [ `{HNDLR}restart` ]
-———————×———————
-
-‹ @DroxTeAm
-‹ @P222P"""
+📢 **Join us for updates:**  
+🎧 @DroxTeAm  
+👨‍💻 @P222P"""
     await m.reply(HELP)
 
 @Client.on_message(filters.command(["repo"], prefixes=f"{HNDLR}"))
@@ -77,7 +80,16 @@ async def repo(client, m: Message):
     REPO = f"""
 <b>‹ Hello {m.from_user.mention}!
 
-‹ Source Channel: @DroxTeAm
-‹ Developer: @P222P
+🌍 **Official Repository:**  
+🔗 https://github.com/BEknUur/MusicApp  
+
+🛠 **Recent Update:**  
+✅ Improved performance  
+✅ New restart method  
+✅ Bug fixes  
+
+📢 Stay updated:  
+🎧 @DroxTeAm  
+👨‍💻 @P222P
 """
     await m.reply(REPO, disable_web_page_preview=True)
